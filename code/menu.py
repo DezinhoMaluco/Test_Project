@@ -19,7 +19,7 @@ class Menu:
         pygame.mixer_music.play(-1)
         while True:
             self.window.blit(source=self.surf, dest=self.rect)
-            self.menu_text(60, "RUN", COLOR_ORANGE, ((WIN_WIDTH / 2), 80))
+            self.menu_text(60, "FLY", COLOR_ORANGE, ((WIN_WIDTH / 2), 80))
             self.menu_text(60, "HANDMAN!", COLOR_ORANGE, ((WIN_WIDTH / 2), 140))
             self.menu_text(11, "You are a bored kid in the", COLOR_BLACK, (95, 43))
             self.menu_text(11, "backseat in a travel, when", COLOR_BLACK, (95, 56))

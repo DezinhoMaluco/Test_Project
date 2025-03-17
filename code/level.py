@@ -4,6 +4,7 @@ import sys
 
 import pygame
 
+from code.Const import EVENT_ENEMY
 from code.entity import Entity
 from code.entityFactory import EntityFactory
 
@@ -14,8 +15,9 @@ class Level:
         self.name = name
         self.game_mode = game_mode
         self.entity_list: list[Entity] = []
-        self.entity_list.extend(EntityFactory.get_entity('Level1Bg'))
-        self.entity_list.append(EntityFactory.get_entity('Player'))
+        self.entity_list.extend(EntityFactory.get_entity(self.name + 'Bg'))
+        self.entity_list.append(EntityFactory.get_entity('Player1'))
+        pygame.time.set_timer(EVENT_ENEMY, 3000)
 
     def run(self, get_rect=None):
         pygame.mixer_music.load(f'./asset/leap.wav')
@@ -31,4 +33,6 @@ class Level:
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     sys.exit()
+                if event.type == EVENT_ENEMY:
+                    self.entity_list.append(EntityFactory.get_entity('Enemy1'))
         pass

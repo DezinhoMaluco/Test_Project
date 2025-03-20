@@ -5,6 +5,7 @@ import sys
 import pygame
 
 from code.Const import EVENT_ENEMY
+from code.EntityMediator import EntityMediator
 from code.entity import Entity
 from code.entityFactory import EntityFactory
 
@@ -17,7 +18,10 @@ class Level:
         self.entity_list: list[Entity] = []
         self.entity_list.extend(EntityFactory.get_entity(self.name + 'Bg'))
         self.entity_list.append(EntityFactory.get_entity('Player1'))
+        self.entity_list.append(EntityFactory.get_entity('Player2'))
         pygame.time.set_timer(EVENT_ENEMY, 3000)
+        EntityMediator.verify_collision(entity_list=self.entity_list)
+        EntityMediator.verify_health(entity_list=self.entity_list)
 
     def run(self, get_rect=None):
         pygame.mixer_music.load(f'./asset/leap.wav')

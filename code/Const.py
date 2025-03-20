@@ -18,8 +18,22 @@ ENTITY_SPEED = {
     'Level1Bg4': 6,
     'Level1Bg5': 0,
     'Player1': 3,
+    'Player2': 3,
     'Enemy1': random.randint(1, 2)
 }
+
+ENTITY_HEALTH = {
+    'Level1Bg0': 999,
+    'Level1Bg1': 999,
+    'Level1Bg2': 999,
+    'Level1Bg3': 999,
+    'Level1Bg4': 999,
+    'Level1Bg5': 999,
+    'Player1': 300,
+    'Player2': 300,
+    'Enemy1': 30
+}
+
 # M
 MENU_OPTION = ('PLAY',
                'SCORE',

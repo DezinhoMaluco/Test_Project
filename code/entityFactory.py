@@ -21,5 +21,7 @@ class EntityFactory:
                 return list_bg
             case 'Player1':
                 return Player('Player1', (-130, 50))
+            case 'Player2':
+                return Player('Player2', (95, 60))
             case 'Enemy1':
                 return Enemy('Enemy1', (WIN_WIDTH + 10, random.randint(0, WIN_HEIGHT - 40)))

@@ -4,7 +4,7 @@ import pygame.image
 from pygame import Surface, Rect
 from pygame.font import Font
 
-from code.Const import WIN_WIDTH, COLOR_ORANGE, MENU_OPTION, COLOR_WHITE, COLOR_PURPLE, COLOR_BLACK
+from code.Const import WIN_WIDTH, C_ORANGE, MENU_OPTION, C_WHITE, C_PURPLE, C_BLACK
 
 
 class Menu:
@@ -19,19 +19,19 @@ class Menu:
         pygame.mixer_music.play(-1)
         while True:
             self.window.blit(source=self.surf, dest=self.rect)
-            self.menu_text(60, "FLY", COLOR_ORANGE, ((WIN_WIDTH / 2), 80))
-            self.menu_text(60, "HANDMAN!", COLOR_ORANGE, ((WIN_WIDTH / 2), 140))
-            self.menu_text(11, "You are a bored kid in the", COLOR_BLACK, (95, 43))
-            self.menu_text(11, "backseat in a travel, when", COLOR_BLACK, (95, 56))
-            self.menu_text(11, "you have the brilliant idea.", COLOR_BLACK, (95, 69))
-            self.menu_text(10, "Created by: André Luís Serpa dos Santos ", COLOR_BLACK, (450, 43))
-            self.menu_text(10, "A.K.A: Dezinho Maluco.", COLOR_BLACK, (450, 56))
+            self.menu_text(60, "FLY", C_ORANGE, ((WIN_WIDTH / 2), 80))
+            self.menu_text(60, "HANDMAN!", C_ORANGE, ((WIN_WIDTH / 2), 140))
+            self.menu_text(11, "You are a bored kid in the", C_BLACK, (95, 43))
+            self.menu_text(11, "backseat in a travel, when", C_BLACK, (95, 56))
+            self.menu_text(11, "you have the brilliant idea.", C_BLACK, (95, 69))
+            self.menu_text(10, "Created by: André Luís Serpa dos Santos ", C_BLACK, (450, 43))
+            self.menu_text(10, "A.K.A: Dezinho Maluco.", C_BLACK, (450, 56))
 
             for i in range(len(MENU_OPTION)):
                 if i == menu_option:
-                    self.menu_text(20, MENU_OPTION[i], COLOR_PURPLE, ((WIN_WIDTH / 2), 200 + 30 * i))
+                    self.menu_text(20, MENU_OPTION[i], C_PURPLE, ((WIN_WIDTH / 2), 200 + 30 * i))
                 else:
-                    self.menu_text(20, MENU_OPTION[i], COLOR_WHITE, ((WIN_WIDTH / 2), 200 + 30 * i))
+                    self.menu_text(20, MENU_OPTION[i], C_WHITE, ((WIN_WIDTH / 2), 200 + 30 * i))
 
             # Check for all events
             for event in pygame.event.get():
